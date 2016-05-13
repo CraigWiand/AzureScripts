@@ -16,14 +16,14 @@ The **Incarnation** REG_SZ value in **HKLM\SOFTWARE\Microsoft\GuestAgent** has t
 
 **Reg.exe**
 ```
-reg query HKLM\SOFTWARE\Microsoft\GuestAgent /v Incarnation
+> reg query HKLM\SOFTWARE\Microsoft\GuestAgent /v Incarnation
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\GuestAgent
     Incarnation    REG_SZ    2.7.1198.735
 ```
 
 **PowerShell**
 ```
-(Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\GuestAgent).Incarnation
+> (Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\GuestAgent).Incarnation
 2.7.1198.735
 ```
 or look in **C:\WindowsAzure\Logs\WaAppAgent.log** for the version logged at agent start-up
@@ -31,7 +31,9 @@ or look in **C:\WindowsAzure\Logs\WaAppAgent.log** for the version logged at age
 ### Linux Agent
 The easiest way to determine the current version of the Azure Linux agent when you are logged into the Linux guest is through the command: 
 ```
-waagent -version
+> waagent -version
+WALinuxAgent-2.1.3 running on ubuntu 15.10
+Python: 3.4.3
 ```
 
 
@@ -40,26 +42,26 @@ To facilitate getting this information without connecting to the guest one can u
 
 **Using Azure PowerShell to view guest agent version on classic VMs:**
 ```
-(Get-AzureVM -ServiceName ClassicWinVM -Name ClassicWinVM).GuestAgentStatus.GuestAgentVersion
+> (Get-AzureVM -ServiceName ClassicWinVM -Name ClassicWinVM).GuestAgentStatus.GuestAgentVersion
 2.7.1198.735
 ```
 ```
-(Get-AzureVM -ServiceName ClassicLinuxVM -Name ClassicLinuxVM).GuestAgentStatus.GuestAgentVersion
+> (Get-AzureVM -ServiceName ClassicLinuxVM -Name ClassicLinuxVM).GuestAgentStatus.GuestAgentVersion
 WALinuxAgent-2.0.14
 ```
 **Using Azure PowerShell to view guest agent version on resource manager VMs:**
 ```
-(Get-AzureRmVM -ResourceGroupName ResourceGroup1 -Name WindowsVM -Status).VMAgent.VmAgentVersion
+> (Get-AzureRmVM -ResourceGroupName ResourceGroup1 -Name WindowsVM -Status).VMAgent.VmAgentVersion
 2.7.1198.735
 ```
 
 ```
-(Get-AzureRmVM -ResourceGroupName ResourceGroup2 -Name LinuxVM -Status).VMAgent.VmAgentVersion
+> (Get-AzureRmVM -ResourceGroupName ResourceGroup2 -Name LinuxVM -Status).VMAgent.VmAgentVersion
 WALinuxAgent-2.0.14
 ```
 **Using Azure XPlat CLI to view guest agent version on classic VMs:**
 ```
-azure vm show -d ClassicWinVM.cloudapp.net ClassicWinVM1 -vv
+$ azure vm show -d ClassicWinVM.cloudapp.net ClassicWinVM1 -vv
 
 ...
 <GuestAgentVersion>2.7.1198.735</GuestAgentVersion>
@@ -67,7 +69,7 @@ azure vm show -d ClassicWinVM.cloudapp.net ClassicWinVM1 -vv
 ```
 
 ```
-azure vm show -d ClassicLinuxVM.cloudapp.net ClassicLinuxVM -vv
+$ azure vm show -d ClassicLinuxVM.cloudapp.net ClassicLinuxVM -vv
 
 ...
 <GuestAgentVersion>2.1.3</GuestAgentVersion>
@@ -77,7 +79,7 @@ azure vm show -d ClassicLinuxVM.cloudapp.net ClassicLinuxVM -vv
 **Using Azure XPlat CLI to view guest agent version on resource manager VMs:**
 
 ```
-azure vm get-instance-view -g ResourceGroup1 -n WindowsVM
+$ azure vm get-instance-view -g ResourceGroup1 -n WindowsVM
 
 ...
 data:    instanceView vmAgent vmAgentVersion "2.7.1198.766"
@@ -85,7 +87,7 @@ data:    instanceView vmAgent vmAgentVersion "2.7.1198.766"
 ```
 
 ```
-azure vm get-instance-view -g ResourceGroup2 -n LinuxVM
+$ azure vm get-instance-view -g ResourceGroup2 -n LinuxVM
 
 ...
 data:    instanceView vmAgent vmAgentVersion "WALinuxAgent-2.0.16"
