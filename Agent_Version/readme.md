@@ -5,7 +5,7 @@ The Windows VM agent is an optional component, however once installed it will au
 
 
 ##Azure Linux Agent (waagent)
-A wealth of information on the Azure Linux agent can be found in the [user guide](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-agent-user-guide/). At this time the Linux guest agent does not auto-update.  Therefore, you are responseible for keeping the agent current.  Microsoft will periodically update the agent (waagent) in the various endorsed Linux distribution package repositories.  The recommended best practice is to update to the latest version available in the respective repositories for your distribution.  There are manual update steps available to move to the latest version of waagent on [GitHub](https://github.com/Azure/WALinuxAgent), but this should only be necessary to do under the direction of Microsoft support.
+A wealth of information on the Azure Linux agent can be found in the [user guide](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-agent-user-guide/). At this time the Linux guest agent does not auto-update.  Therefore, you are responsible for keeping the agent current.  Microsoft will periodically update the agent (waagent) in the various endorsed Linux distribution package repositories.  The recommended best practice is to update to the latest version available in the respective repositories for your distribution.  There are manual update steps available to move to the latest version of waagent on [GitHub](https://github.com/Azure/WALinuxAgent), but this should only be necessary to do under the direction of Microsoft support.
 
 
 ## Getting the agent version when logged on
