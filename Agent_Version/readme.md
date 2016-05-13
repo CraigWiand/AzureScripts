@@ -38,7 +38,7 @@ Python: 3.4.3
 
 
 ##Retrieving Agent version remotely
-To facilitate getting this information without connecting to the guest one can use either PowerShell or Azure Cli as shown below.  Note: the commands below assume that you have already logged in to PowerShell or Azure Cli, as well as configured the desired Azure Cli configuration mode.
+To facilitate getting this information without connecting to the guest one can use either PowerShell or Azure Cli as shown below.  Note: the commands below assume that you have already logged in to PowerShell or Azure Cli, as well as configured the desired Azure Cli configuration mode.  The are designed as "Running script on a local computer" as described in [calling scripts](../documentation/callingscripts.md).
 
 **Using Azure PowerShell to view guest agent version on classic VMs:**
 ```
