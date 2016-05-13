@@ -31,7 +31,7 @@ or look in **C:\WindowsAzure\Logs\WaAppAgent.log** for the version logged at age
 ### Linux Agent
 The easiest way to determine the current version of the Azure Linux agent when you are logged into the Linux guest is through the command: 
 ```
-> waagent -version
+$ waagent -version
 WALinuxAgent-2.1.3 running on ubuntu 15.10
 Python: 3.4.3
 ```
